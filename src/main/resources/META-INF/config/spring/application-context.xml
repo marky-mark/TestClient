@@ -14,8 +14,14 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
    <context:annotation-config/>
 
+    <bean id="apiKey" class="com.mtt.api.model.MTTApiKey">
+        <property name="accessKey" value="66d4ad30f19511e0be500800200c9a66"/>
+        <property name="privateKey" value="a5e19380f19511e0be500800200c9a66"/>
+    </bean>
+
     <bean id="testApi" class="com.mtt.api.client.impl.RemoteTestApiFactoryBean">
         <property name="baseUri" value="${mtt.api.host:http://localhost:9080/api}"/>
+        <property name="defaultApiKey" ref="apiKey"/>
     </bean>
 
 </beans>
