@@ -24,4 +24,6 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
         <property name="defaultApiKey" ref="apiKey"/>
     </bean>
 
+    <bean id="exceptionTranslator" class="com.mtt.api.client.impl.ApiExceptionTranslator"/>
+
 </beans>
